@@ -1,21 +1,17 @@
-export const dynamic = 'force-dynamic'
+import { Suspense } from "react";
+import ProjectList from "./components/project-list";
+import ProjectListLoading from "./components/project-list-loading";
 
 export default async function ProjectsPage(){
-    const response = await fetch('http://localhost:3001/repos')
-    const repos = await response.json()
     return (
-        <div className="p-20">
+        <div>
             <h1 className="mb-8 text-xl">Projects</h1>
+            <div className="mb-8">This is the list of projects.</div>
 
-            <ul>
-                {repos.map(repo => (
-                    <li key={repo.id} className="mb-4">
-                        <div>Title: {repo.title}</div>
-                        <div>Description: {repo.description}</div>
-                        <div>Stargazers count: {repo.stargazers_count}</div>
-                    </li>
-                ))}
-            </ul>
+            <Suspense fallback={<ProjectListLoading/>}>
+                <ProjectList/>
+            </Suspense>
+            
         </div>
     )
 }
