@@ -1,4 +1,5 @@
 'use client'
+
 import Image from "next/image";
 import { useState } from "react";
 import Card from "@/components/card";
@@ -6,7 +7,7 @@ import Card from "@/components/card";
 export default function Home() {
     const [isVisible, setIsVisible] = useState(true)
     const [names, setNames] = useState(['Jake', 'Tim', 'Jon'])
-    const cards =isVisible && names.map((name,index) => <Card key={index}>{name}</Card>)
+    const cards = isVisible && names.map((name,index) => <Card key={index}>{name}</Card>)
     const handleClick = () => {
         //alert('Hello!')
         setIsVisible(!isVisible)
