@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import { useState } from "react";
 import Card from "@/components/card";
 
@@ -26,13 +25,13 @@ export default function Home() {
                 {cards}
 
                 <div className="flex space-x-2">
-                    <button onClick={handleClick} className="border p-2 rounded-md cursor-pointer hover:bg-white/25">
+                    <button onClick={handleClick} className="border p-2 cursor-pointer hover:bg-white/25">
                         {isVisible?'Hide':'Show'}
                     </button>
-                    <button onClick={handleAdd} className="border p-2 rounded-md cursor-pointer hover:bg-white/25">
+                    <button onClick={handleAdd} className="border p-2 cursor-pointer hover:bg-white/25">
                         Add
                     </button>
-                    <button onClick={handleDel} className="border p-2 rounded-md cursor-pointer hover:bg-white/25">
+                    <button onClick={handleDel} className="border p-2 cursor-pointer hover:bg-white/25">
                         Del
                     </button>
                 </div>
